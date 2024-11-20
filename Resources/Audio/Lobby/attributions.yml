@@ -64,6 +64,11 @@
   copyright: "lasers rip apart the bulkhead by Alexander Divine."
   source: "https://soundcloud.com/alexanderdivine/lasers-rip-apart-the-bulkhead"
 
+- files: ["treacherous_voyage.ogg"]
+  license: "CC-BY-NC-3.0"
+  copyright: "Treacherous Voyage by Jon Luc Hefferman."
+  source: "https://freemusicarchive.org/music/Jon_Luc_Hefferman/20170730112628534/Treacherous_Voyage"
+  
 - files: ["every_light_is_blinking_at_once.ogg"]
   license: "CC-BY-NC-SA-3.0"
   copyright: "every light is blinking at once by Alexander Divine."
