@@ -1,0 +1,38 @@
+<ui:FancyWindow xmlns="https://spacestation14.io"
+                xmlns:ui="clr-namespace:Content.Client.UserInterface.Controls"
+                Title="{Loc 'keycard-activator-menu-title'}"
+                MinSize="400 300">
+        <BoxContainer Orientation="Vertical"
+                      HorizontalExpand="True"
+                      VerticalExpand="True"
+                      Margin="5">
+                <RichTextLabel Name="DescriptionLabel"
+                               Text="{Loc 'keycard-activator-menu-maindesc'}"
+                               Margin="0 0 0 10"/>
+
+                <Control Name="MainScreen">
+                        <BoxContainer Orientation="Vertical">
+                                <Label Text="{Loc 'keycard-activator-menu-choosetext'}"
+                                       Margin="0 0 0 10"/>
+                                <Button Text="{Loc 'keycard-activator-menu-code-button'}"
+                                        Name="RedCodeButton"
+                                        StyleClasses="ActionButton"/>
+                                <Button Text="{Loc 'keycard-activator-menu-ert-button'}"
+                                        Name="CallERTButton"
+                                        StyleClasses="ActionButton"/>
+                                <Button Text="{Loc 'keycard-activator-menu-nuke-button'}"
+                                        Name="GetCodesButton"
+                                        StyleClasses="ActionButton"/>
+                        </BoxContainer>
+                </Control>
+
+                <Control Name="ActivationScreen"
+                         Visible="False">
+                        <RichTextLabel Text="{Loc 'keycard-activator-menu-action-hint'}"
+                                       Margin="0 0 0 10"/>
+                        <Button Text="{Loc 'keycard-activator-menu-back-button'}"
+                                Name="BackButton"
+                                StyleClasses="BackButton"/>
+                </Control>
+        </BoxContainer>
+</ui:FancyWindow>

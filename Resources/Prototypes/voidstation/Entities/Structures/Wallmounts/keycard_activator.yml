@@ -1,0 +1,81 @@
+- type: entity
+  id: KeycardActivator
+  name: keycard activator
+  description: Small device that reads the ID card signal. Must be linked to another same device
+  placement:
+    mode: SnapgridCenter
+    snap:
+      - Wallmount
+  components:
+    - type: StationAiWhitelist
+    - type: WallMount
+    - type: ApcPowerReceiver
+    - type: Electrified
+      enabled: false
+      usesApcPower: true
+    - type: ExtensionCableReceiver
+    - type: Clickable
+    - type: InteractionOutline
+    - type: AccessReader
+      access: [["Command"]]
+    - type: Appearance
+    - type: WiresVisuals
+    - type: ContainerFill
+      containers:
+        board: [IntercomElectronics]
+    - type: ContainerContainer
+      containers:
+        board: !type:Container
+        key_slots: !type:Container
+    - type: Sprite
+      noRot: false
+      drawdepth: WallMountedItems
+      sprite: voidstation/Structures/Wallmounts/keycard_activator.rsi
+      layers:
+        - state: base
+        - state: activated
+          visible: false
+    - type: Transform
+      noRot: false
+      anchored: true
+    - type: WiresPanel
+    - type: Wires
+      boardName: wires-board-name-intercom
+      layoutId: Intercom
+    - type: ActivatableUIRequiresPower
+    - type: ActivatableUI
+      key: enum.IntercomUiKey.Key
+      singleUser: true
+    - type: UserInterface
+      interfaces:
+        enum.IntercomUiKey.Key:
+          type: KeycardActivatorBoundUserInterface
+    - type: Construction
+      graph: Intercom
+      node: intercom
+    - type: Damageable
+      damageContainer: StructuralInorganic
+      damageModifierSet: StructuralMetallic
+    - type: Destructible
+      thresholds:
+        - trigger: !type:DamageTrigger
+            damage: 301
+          behaviors:
+            - !type:DoActsBehavior
+              acts: ["Destruction"]
+        - trigger: !type:DamageTrigger
+            damage: 200
+          behaviors:
+            - !type:DoActsBehavior
+              acts: ["Destruction"]
+            - !type:PlaySoundBehavior
+              sound:
+                collection: MetalGlassBreak
+                params:
+                  volume: -4
+    - type: GenericVisualizer
+      visuals:
+        enum.KeycardActivatorVisuals.ActivationState:
+          activated:
+            True: { visible: true }
+            False: { visible: false }

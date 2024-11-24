@@ -1,0 +1,10 @@
+ent-KeycardActivator = устройство ID-аутентификации
+    .desc = Защищённое устройство, требующее одновременную активацию двумя ID-картами
+keycard-activator-menu-title = Устройство ID-аутентификации
+keycard-activator-menu-maindesc = Это устройство требует одновременную активацию двумя ID-картами с высоким уровнем доступа
+keycard-activator-menu-choosetext = Выберите действие
+keycard-activator-menu-code-button = Установить красный код
+keycard-activator-menu-ert-button = Вызов ОБР
+keycard-activator-menu-nuke-button = Получить коды ядерной аутентификации
+keycard-activator-menu-action-hint = Проведите ID-картой для активации. Второй участник должен сделать это одновременно с вами.
+keycard-activator-menu-back-button = Назад
